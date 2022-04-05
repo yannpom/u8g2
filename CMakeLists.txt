@@ -1,5 +1,7 @@
-set(COMPONENT_ADD_INCLUDEDIRS csrc)
-set(COMPONENT_SRCS "csrc/u8x8_setup.c"
+set(COMPONENT_ADD_INCLUDEDIRS csrc cppsrc)
+set(COMPONENT_SRCS  "cppsrc/U8g2lib.cpp"
+                    "cppsrc/U8x8lib.cpp"
+                    "csrc/u8x8_setup.c"
                     "csrc/u8x8_u8toa.c"
                     "csrc/u8x8_d_ssd1306_96x16.c"
                     "csrc/u8g2_d_memory.c"
@@ -86,8 +88,12 @@ set(COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_d_uc1701_mini12864.c"
                     "csrc/u8x8_u16toa.c"
                     "csrc/u8x8_d_a2printer.c"
-                    "csrc/u8x8_d_st7565.c"
-                    "csrc/u8x8_capture.c")
-set(COMPONENT_NAME ".")
+                    "csrc/u8x8_d_st7565.c")
+set(COMPONENT_NAME "u8g2")
+
+set(U8X8_NO_HW_SPI)
+
+set(COMPONENT_REQUIRES "arduino-esp32")
+
 
 register_component()
